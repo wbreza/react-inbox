@@ -1,0 +1,84 @@
+[
+    {
+        "id": "conversation-1",
+        "name": "Conversation 1",
+        "recipients": [
+            {
+                "id": "user-1",
+                "displayName": "Wallace Breza"
+            },
+            {
+                "id": "user-2",
+                "displayName": "Diana Breza"
+            }
+        ],
+        "provider": "slack",
+        "messages": [
+            {
+                "id": "message-4",
+                "recipientId": "user-1",
+                "content": "This is message 4",
+                "timestamp": 1541130873
+            },
+            {
+                "id": "message-3",
+                "recipientId": "user-2",
+                "content": "This is message 3",
+                "timestamp": 1541130872
+            },
+            {
+                "id": "message-2",
+                "recipientId": "user-1",
+                "content": "This is message 2",
+                "timestamp": 1541130871
+            },
+            {
+                "id": "message-1",
+                "recipientId": "user-3",
+                "content": "This is message 1",
+                "timestamp": 1541130868
+            }
+        ]
+    },
+    {
+        "id": "conversation-2",
+        "name": "Conversation 2",
+        "recipients": [
+            {
+                "id": "user-3",
+                "displayName": "Bob Smith"
+            },
+            {
+                "id": "user-4",
+                "displayName": "Mary Jones"
+            }
+        ],
+        "provider": "slack",
+        "messages": [
+            {
+                "id": "message-5",
+                "recipientId": "user-3",
+                "content": "This is message 5",
+                "timestamp": 1541130873
+            },
+            {
+                "id": "message-6",
+                "recipientId": "user-4",
+                "content": "This is message 6",
+                "timestamp": 1541130872
+            },
+            {
+                "id": "message-7",
+                "recipientId": "user-3",
+                "content": "This is message 7",
+                "timestamp": 1541130871
+            },
+            {
+                "id": "message-8",
+                "recipientId": "user-4",
+                "content": "This is message 8",
+                "timestamp": 1541130868
+            }
+        ]
+    }
+]
