@@ -1,7 +1,8 @@
 import React from 'react'
 import Message from './message';
+import MessageForm from './messageForm';
 
-const MessageList = ({ conversation, selectedMessage, messages, onMessageSelected }) => {
+const MessageList = ({ conversation, selectedMessage, messages, onMessageSelected, onMessageSubmit }) => {
     return (
         <div>
             <h3>Message List</h3>
@@ -15,6 +16,9 @@ const MessageList = ({ conversation, selectedMessage, messages, onMessageSelecte
                         onMessageSelected={onMessageSelected} />
                 )}
             </ul>
+            <MessageForm
+                onMessageSubmit={onMessageSubmit}
+                conversation={conversation} />
         </div>
     );
 }

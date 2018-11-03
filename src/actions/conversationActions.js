@@ -49,8 +49,9 @@ export function loadConversation(conversationId) {
 
 export function saveConversation(conversation) {
     return (dispatch) => {
-        return conversationService.saveConversation(conversation)
-            .then(conversation => {
+        const clone = Object.assign({}, conversation);
+        return conversationService.saveConversation(clone)
+            .then(saved => {
                 if (conversation.id) {
                     dispatch(updateConversationSuccess(conversation));
                 } else {

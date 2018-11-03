@@ -26,16 +26,15 @@ export default class ConversationService {
     }
 
     saveConversation(conversation) {
+        conversation = Object.assign({}, conversation);
         return new Promise((resolve, reject) => {
-            const conversationToSave = Object.assign({}, conversation);
-
-            if (!conversationToSave.id) {
-                conversationToSave.id = shortid.generate();
+            if (!conversation.id) {
+                conversation.id = shortid.generate();
             }
 
-            this.cache[conversationToSave.id] = conversationToSave;
+            this.cache[conversation.id] = conversation;
 
-            resolve(conversationToSave);
+            resolve(conversation);
         });
     }
 
