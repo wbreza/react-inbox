@@ -2,10 +2,15 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Message = ({ conversation, message, selected, onMessageSelected }) => {
+    const classNames = selected ? 'list-group-item list-group-item-action active' : 'list-group-item list-group-item-action';
+
     return (
-        selected 
-            ? <Link className={"list-group-item list-group-item-action active"} to={`/inbox/conversations/${conversation.id}/messages/${message.id}`} onClick={() => onMessageSelected(message)} key={message.id}>{message.content}</Link>
-            : <Link className={"list-group-item list-group-item-action"} to={`/inbox/conversations/${conversation.id}/messages/${message.id}`} onClick={() => onMessageSelected(message)} key={message.id}>{message.content}</Link>
+        <Link className={classNames} 
+            to={`/inbox/conversations/${conversation.id}/messages/${message.id}`} 
+            onClick={() => onMessageSelected(message)} 
+            key={message.id}>
+            {message.content}
+        </Link>
     );
 }
 

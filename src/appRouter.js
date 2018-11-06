@@ -5,11 +5,13 @@ import Header from './components/common/header';
 import Inbox from './components/inbox/inboxPage';
 import About from './components/about/aboutPage';
 import Home from './components/home/homePage';
+import RealtimeUpdates from './components/common/realtimeUpdates';
 
 const AppRouter = () => {
     return (
         <Router>
             <div>
+                <RealtimeUpdates />
                 <Header />
                 <Route path="/" exact component={Home} />
                 <Route path="/about" component={About} />

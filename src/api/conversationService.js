@@ -32,6 +32,7 @@ export default class ConversationService {
                 conversation.id = shortid.generate();
             }
 
+            conversation.lastUpdatedTimestamp = new Date().getTime() / 1000 | 0;
             this.cache[conversation.id] = conversation;
 
             resolve(conversation);

@@ -20,21 +20,23 @@ class InboxPage extends React.Component {
         this.onConversationSelected = this.onConversationSelected.bind(this);
         this.onMessageSelected = this.onMessageSelected.bind(this);
         this.onMessageSubmit = this.onMessageSubmit.bind(this);
+    }
 
+    componentDidMount() {
         this.props.actions.loadConversations();
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (this.props.conversations !== nextProps.conversations) {
+    componentDidUpdate(prevProps) {
+        if (this.props.conversations !== prevProps.conversations) {
             this.setState({
-                conversations: [...nextProps.conversations],
+                conversations: [...this.props.conversations],
             });
 
             const conversationId = this.props.match.params.conversationId
-            let conversation = nextProps.conversations[0];
+            let conversation = this.props.conversations[0];
 
             if (conversationId) {
-                const matches = nextProps.conversations.filter(conversation => conversation.id === conversationId);
+                const matches = this.props.conversations.filter(conversation => conversation.id === conversationId);
                 if (matches) {
                     conversation = matches[0];
                 }
@@ -54,12 +56,12 @@ class InboxPage extends React.Component {
                 if (messageId && this.state.conversation) {
                     const message = this.state.conversation.messages
                         .filter(message => message.id === messageId);
-    
+
                     if (message) {
                         this.onMessageSelected(message[0]);
                     }
                 }
-            }    
+            }
         });
     }
 
